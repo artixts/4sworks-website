@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>4Sworks Admin</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.admin-page{min-height:100vh;background:#f3f7fc;padding:36px 16px}.admin-shell{max-width:1050px;margin:auto}.admin-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.admin-card{background:white;border:1px solid #dbe5f1;border-radius:18px;padding:24px;box-shadow:0 10px 30px #15375b0b}.admin-card h1,.admin-card h2{margin-top:0;color:#0b376c}.admin-form{max-width:440px;margin:6vh auto}.admin-form label{display:block;margin:14px 0 6px;font-weight:700}.admin-form input,.admin-form select{width:100%;padding:12px;border:1px solid #cbd8e8;border-radius:9px;font:inherit}.admin-btn{background:#0755a4;color:white;border:0;border-radius:9px;padding:11px 16px;font-weight:700;cursor:pointer}.admin-btn:disabled{opacity:.6}.admin-secondary{background:#e7f0fa;color:#164d83}.admin-error{color:#b42318;min-height:24px}.admin-muted{color:#63748b}.admin-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.admin-tools select{padding:10px;border:1px solid #cbd8e8;border-radius:8px}.enquiry-list{display:grid;gap:12px;margin-top:18px}.enquiry{border:1px solid #dbe5f1;border-radius:12px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:12px}.enquiry h3{margin:0 0 6px;color:#123d70}.enquiry p{margin:5px 0;overflow-wrap:anywhere}.enquiry select{padding:8px;border:1px solid #cbd8e8;border-radius:8px}.status{display:inline-block;border-radius:20px;padding:4px 9px;background:#e8f2ff;color:#164d83;font-size:12px;font-weight:700}.hidden{display:none!important}@media(max-width:600px){.admin-head{align-items:flex-start;flex-direction:column}.enquiry{grid-template-columns:1fr}.admin-card{padding:17px}}
+</style>
+</head>
+<body><main class="admin-page"><div class="admin-shell">
+<section id="login-panel" class="admin-card admin-form">
+<a href="/" style="font-weight:800;color:#0755a4;text-decoration:none">← 4Sworks website</a>
+<h1 style="margin-top:20px">Admin sign in</h1><p class="admin-muted">Sign in to review customer enquiries.</p>
+<form id="login-form"><label for="email">Admin email</label><input id="email" type="email" autocomplete="username" required maxlength="254"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required maxlength="200"><p id="login-error" class="admin-error" role="status"></p><button class="admin-btn" type="submit">Sign in</button></form>
+</section>
+<section id="dashboard" class="hidden">
+<div class="admin-head"><div><a href="/" style="color:#0755a4;text-decoration:none;font-weight:800">4Sworks</a><h1 style="margin:8px 0 0;color:#0b376c">Enquiry dashboard</h1><p class="admin-muted" id="signed-in"></p></div><button id="logout" class="admin-btn admin-secondary">Sign out</button></div>
+<div class="admin-card"><div class="admin-tools"><label for="filter">Filter:</label><select id="filter"><option value="">All enquiries</option><option value="new">New</option><option value="contacted">Contacted</option><option value="closed">Closed</option></select><button id="refresh" class="admin-btn admin-secondary">Refresh</button><span id="count" class="admin-muted"></span></div><p id="dashboard-error" class="admin-error" role="status"></p><div id="enquiries" class="enquiry-list"></div></div>
+</section>
+</div></main>
+<script src="admin.js"></script>
+</body></html>
